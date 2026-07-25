@@ -71,5 +71,13 @@
     fetch('content/items.json').then(response => response.ok ? response.json() : Promise.reject()).then(data => { if (Array.isArray(data.items)) renderPicks(data.items); }).catch(() => {});
     document.querySelector('#contactForm').addEventListener('submit', event => { if (location.protocol === 'file:') { event.preventDefault(); document.querySelector('#formStatus').style.display = 'block'; event.target.reset(); } });
   </script>
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  <script>
+    if (window.netlifyIdentity) {
+      window.netlifyIdentity.on('init', user => {
+        if (!user && window.location.hash.includes('invite_token')) window.netlifyIdentity.open('signup');
+      });
+    }
+  </script>
 </body>
 </html>
