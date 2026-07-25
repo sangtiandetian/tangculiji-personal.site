@@ -24,3 +24,7 @@ collections:
               - { label: "标签名称", name: "tag", widget: "string" }
               - { label: "标题", name: "title", widget: "string" }
               - { label: "摘要", name: "summary", widget: "text" }
+              - { label: "封面文案", name: "cover", widget: "string" }
+              - { label: "发布日期", name: "date", widget: "string", required: false }
+              - { label: "原文链接", name: "link", widget: "string", required: false }
+              - { label: "正文", name: "body", widget: "markdown" }
