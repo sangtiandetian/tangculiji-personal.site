@@ -29,3 +29,22 @@ collections:
               - { label: "发布日期", name: "date", widget: "string", required: false }
               - { label: "原文链接", name: "link", widget: "string", required: false }
               - { label: "正文", name: "body", widget: "markdown" }
+  - name: "spotlight"
+    label: "独立轮播展示"
+    files:
+      - label: "轮播内容列表"
+        name: "items"
+        file: "content/spotlight.json"
+        fields:
+          - label: "轮播内容"
+            name: "items"
+            widget: "list"
+            summary: "{{fields.title}}"
+            fields:
+              - { label: "编号", name: "id", widget: "number", value_type: "int" }
+              - { label: "色彩主题", name: "tone", widget: "select", options: ["mint", "peach", "blue"] }
+              - { label: "眉题", name: "label", widget: "string" }
+              - { label: "标题", name: "title", widget: "string" }
+              - { label: "说明", name: "summary", widget: "text" }
+              - { label: "配图", name: "image", widget: "image", required: false }
+              - { label: "跳转链接", name: "link", widget: "string", required: false }
